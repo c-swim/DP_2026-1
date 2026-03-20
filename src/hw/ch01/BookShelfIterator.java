@@ -1,7 +1,8 @@
-package ch01.Sample;
+package hw.ch01;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
+
 
 public class BookShelfIterator implements Iterator<Book> {
     private BookShelf bookShelf;
