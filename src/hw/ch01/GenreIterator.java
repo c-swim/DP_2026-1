@@ -19,7 +19,7 @@ public class genreIterator implements Iterator<Book> {
         // 장르가 일치하는 책이 나올 때까지 인덱스 증가
         while (index < bookShelf.getLength()) {
             Book book = bookShelf.getBookAt(index);
-            if (book.getGenre() == genre) {
+            if (book.getGenre().equals(genre)) { 
                 return true;
             }
             index++;

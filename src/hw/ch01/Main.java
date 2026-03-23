@@ -17,6 +17,10 @@ public class Main {
         bookShelf.appendBook(new Book("로마인 이야기", "역사", 1992, 25000));
         bookShelf.appendBook(new Book("어린왕자", "소설", 1943, 9000));
 
+        // 학번 이름 출력
+        System.out.println("==================");
+        System.out.println("20240877 최영진\n");
+
         // [4-2] 장르 필터 Iterator 테스트, 장르="소설"
         System.out.println("=== 소설 장르의 책 목록 ===");
         Iterator<Book> itGenre = bookShelf.iteratorByGenre("소설");
