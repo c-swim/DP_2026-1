@@ -41,6 +41,10 @@ public class yearDescendingIterator implements Iterator<Book> {
                 }
             }
         }
+        // 모든 책을 반환 했음에도 한번 더 호출할 경우
+        if (index == -1) {
+            throw new NoSuchElementException();
+        }
         
         // 찾은 책 -> 방문처리 / 카운트 증가 후 return
         visited[index] = true;
