@@ -25,8 +25,8 @@ public class yearDescendingIterator implements Iterator<Book> {
             throw new NoSuchElementException();
         }
         
-        int index = -1;
-        int maxYear = -1;
+        int index = -1;     // 가장 최신 책의 인덱스
+        int maxYear = -1;   // 가장 최신 책의 출판연도
         
         //전체 배열 탐색 -> 방문하지 않은 책 중 연도가 가장 큰 책 찾기
         for (int i=0; i < bookShelf.getLength(); i++) {

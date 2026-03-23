@@ -17,20 +17,6 @@ public class Main {
         bookShelf.appendBook(new Book("로마인 이야기", "역사", 1992, 25000));
         bookShelf.appendBook(new Book("어린왕자", "소설", 1943, 9000));
 
-        // 기존 코드
-        // 명시적으로 Iterator를 사용하는 방법 
-        Iterator<Book> it = bookShelf.iterator();
-        while (it.hasNext()) {
-            Book book = it.next();
-            System.out.println(book.getName());
-        }
-        System.out.println();
-        // 확장 for문을 사용하는 방법
-        for (Book book: bookShelf) {
-            System.out.println(book.getName());
-        }
-        System.out.println();
-
         // 학번 이름 출력
         System.out.println("==================");
         System.out.println("20240877 최영진\n");
