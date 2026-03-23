@@ -28,13 +28,13 @@ public class BookShelf implements Iterable<Book> {
         return new BookShelfIterator(this);
     }
 
-    // 장르 필터 Iterator
-    public Iterator<Book> genreIterator(String genre) {
-        return new iteratorByGenre(this, genre);
+    // [3-1] 장르 필터 Iterator
+    public Iterator<Book> iteratorByGenre(String genre) {
+        return new genreIterator(this, genre);
     }
 
     // 출판연도 역순 Iterator
-    public Iterator<Book> yearDescendingIterator() {
-        return new iteratorByYear(this);
+    public Iterator<Book> iteratorByYear() {
+        return new yearDescendingIterator(this);
     }
 }

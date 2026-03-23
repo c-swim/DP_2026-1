@@ -1,11 +1,14 @@
 package hw.ch01;
 
-public class GenreIterator {
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+
+public class genreIterator implements Iterator<Book> {
     private BookShelf bookShelf;
     private String genre;
     private int index;
-
-    public GenreIterator(BookShelf bookShelf, String genre) {
+    
+    public genreIterator(BookShelf bookShelf, String genre) {
         this.bookShelf = bookShelf;
         this.genre = genre;
         this.index = 0;
@@ -26,9 +29,11 @@ public class GenreIterator {
 
     @Override
     public Book next() {
-        if (hasNext()) {
-            return bookShelf.getBookAt(index++);
+        if (!hasNext()) {
+            throw new NoSuchElementException();
         }
-        throw new java.util.NoSuchElementException();
+        Book book = bookShelf.getBookAt(index);
+        index++;
+        return book;
     }
 }
