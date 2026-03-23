@@ -41,12 +41,12 @@ public class yearDescendingIterator implements Iterator<Book> {
                 }
             }
         }
-        
-        // 찾은 책 -> 방문처리 / 카운트 증가 후 return
+        // 찾은 책이 없다면 예외 발생
         if (index == -1) {
             throw new NoSuchElementException();
         }
         
+        // 찾은 책 -> 방문처리 / 카운트 증가 후 return
         visited[index] = true;
         count++;
         return bookShelf.getBookAt(index);
