@@ -34,16 +34,12 @@ public class yearDescendingIterator implements Iterator<Book> {
                 Book currentBook = bookShelf.getBookAt(i);
                 int currentYear = currentBook.getYear();
 
-                // 찾은 연도보다 더 큰 연도가 나오면 갱신
+                // 첫 배열 탐색일 경우, 찾은 연도보다 더 큰 연도인 경우 갱신
                 if (index == -1 || currentYear > maxYear) {
                     maxYear = currentBook.getYear();
                     index = i;
                 }
             }
-        }
-        // 찾은 책이 없다면 예외 발생
-        if (index == -1) {
-            throw new NoSuchElementException();
         }
         
         // 찾은 책 -> 방문처리 / 카운트 증가 후 return
