@@ -1,6 +1,6 @@
 package hw.ch03;
 
-public class StringDisplay implements AbstractDisplay {
+public class StringDisplay extends AbstractDisplay {
     private String string;  // 표시해야 하는 문자열 
     private int width;      // 문자열의 길이
 
@@ -10,20 +10,21 @@ public class StringDisplay implements AbstractDisplay {
         this.width = string.length();
     }
 
-    @Override
-    public void open() {
-        printLine();
+    // 반복 횟수 지정 생성자
+    public StringDisplay(String string, int repeatCount) {
+        super(repeatCount);
+        this.string = string;
+        this.width = string.length();
     }
 
     @Override
-    public void print() {
-        System.out.println("|" + string + "|");
-    }
+    public void open() { printLine(); }
 
     @Override
-    public void close() {
-        printLine();
-    }
+    public void print() { System.out.println("|" + string + "|"); }
+
+    @Override
+    public void close() { printLine(); }
 
     //  open과 close에서 호출되어 "+----+" 문자열을 표시하는 메소드
     private void printLine() {
