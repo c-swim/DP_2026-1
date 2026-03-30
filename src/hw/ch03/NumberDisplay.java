@@ -5,7 +5,7 @@ public class NumberDisplay extends AbstractDisplay {
 
     // 생성자
     public NumberDisplay(int number, int repeatCount) {
-        // AbstractDisplay의 생성자 호출, 반복 횟수 설정
+        // AbstractDisplay의 생성자 호출 -> 반복 횟수 설정
         super(repeatCount);
         this.number = number;
     }

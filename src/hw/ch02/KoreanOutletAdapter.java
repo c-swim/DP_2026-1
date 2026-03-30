@@ -1,7 +1,7 @@
 package hw.ch02;
 
 // 220V를 그대로 반환
-// Charger 인터페이스 구현
+// Charger 인터페이스 구현 -> 위임(Delegation)을 이용
 public class KoreanOutletAdapter implements Charger {
     private KoreanOutlet koreanOutlet; // KoreanOutlet 포함
     

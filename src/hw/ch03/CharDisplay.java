@@ -5,7 +5,6 @@ public class CharDisplay extends AbstractDisplay {
 
     // 생성자 
     public CharDisplay(char ch) {
-        super(); // AbstractDisplay의 기본 생성자 호출
         this.ch = ch;
     }
 

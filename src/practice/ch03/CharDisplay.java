@@ -1,6 +1,6 @@
 package practice.ch03;
 
-public class CharDisplay implements AbstractDisplay {
+public class CharDisplay extends AbstractDisplay {
     private char ch; // 표시해야 하는 문자 
 
     // 생성자 
