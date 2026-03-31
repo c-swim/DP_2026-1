@@ -9,6 +9,7 @@ public class Main {
         Triple a2 = Triple.getInstance("ALPHA");
         Triple b2 = Triple.getInstance("BETA");
         Triple c2 = Triple.getInstance("GAMMA");
+        
         if (a1 == a2) {
             System.out.println("a1 == a2 (" + a1 + ")");
         } else {
