@@ -1,8 +1,9 @@
 package hw.ch04;
 
-// import hw.ch04.Factory;
-// import hw.ch04.Product;
-// import hw.ch04.IDCardFactory;
+import hw.ch04.framework.Factory;
+import hw.ch04.framework.Product;
+import hw.ch04.idcard.IDCardFactory;
+import hw.ch04.license.LicenseCardFactory;
 
 public class Main {
     public static void main(String[] args) {
@@ -13,6 +14,7 @@ public class Main {
         Product card2 = factory.create("Son Heungmin");
         card1.use();
         card2.use();
+        System.out.println();
 
         //[3-2] 새로운 카드 타입
         Factory factory2 = new LicenseCardFactory("2026-03-20");

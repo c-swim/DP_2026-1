@@ -1,4 +1,6 @@
-package hw.ch04;
+package hw.ch04.idcard;
+
+import hw.ch04.framework.Product;
 
 public class IDCard extends Product {
     private String owner;
@@ -18,7 +20,7 @@ public class IDCard extends Product {
 
     @Override
     public void use() {
-        System.out.println(this + "을 사용합니다.");
+        System.out.println(this + " 을 사용합니다.");
     }
 
     @Override

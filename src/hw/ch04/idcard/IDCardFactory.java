@@ -1,4 +1,7 @@
-package hw.ch04;
+package hw.ch04.idcard;
+
+import hw.ch04.framework.Factory;
+import hw.ch04.framework.Product;
 
 public class IDCardFactory extends Factory {
     private int serial = 100;   // 카드 일련 번호 초기값
@@ -16,6 +19,6 @@ public class IDCardFactory extends Factory {
 
     @Override
     protected void registerProduct(Product product) {
-        System.out.println(product + "을 등록했습니다.");
+        System.out.println(product + " 을 등록했습니다.");
     }
 }
