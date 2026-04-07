@@ -5,12 +5,9 @@ import ch04.A2.framework.Factory;
 import ch04.A2.framework.Product;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.HashMap;
-import java.util.Map;
 
 public class IDCardFactory extends Factory {
     private int serial = 100;
-    private Map<Integer, String> owners = new HashMap<>();
     private Map<Integer, String> owners = new HashMap<>();
 
     protected synchronized Product createProduct(String owner) {
