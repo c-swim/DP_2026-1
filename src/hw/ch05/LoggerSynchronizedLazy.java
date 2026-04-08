@@ -1,7 +1,7 @@
 package hw.ch05;
 
 public class LoggerSynchronizedLazy {
-    private static LoggerSynchronizedLazy instance;
+    private static LoggerSynchronizedLazy instance = null;
     private StringBuilder logBuffer;
 
     // 생성자
@@ -18,12 +18,14 @@ public class LoggerSynchronizedLazy {
         return instance;
     }
 
+    // 로그 기록 메서드
     public void log(String message) {
         logBuffer.append("[").append(System.currentTimeMillis()).append("] ")
                  .append(message).append("\n");
         System.out.println("[LoggerSynchronizedLazy] " + message);
     }
 
+    // 로그 반환 메서드
     public String getLog() {
         return logBuffer.toString();
     }
