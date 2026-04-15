@@ -16,8 +16,8 @@ public class BorderLine implements Product{
         for(int i = 0; i < s.length(); i++){
             System.out.print(borderChar);
         }
-        // 본문 출력
         System.out.println();
+        // 본문 출력
         System.out.println(s);
         // 아래쪽 라인 출력 (s.length())
         for(int i = 0; i < s.length(); i++){
@@ -32,7 +32,7 @@ public class BorderLine implements Product{
         // 기존 클래스와 동일하게 구현
         Product p = null;
         try {
-            p = (Product)clone();
+            p = (Product)clone();   // 자기 복제
         } catch (CloneNotSupportedException e) {
             e.printStackTrace();
         }
