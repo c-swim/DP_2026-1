@@ -16,11 +16,11 @@ public class Main {
         */
 
         // 플레이어 2명 생성
-        Player player1 = new Player("최승훈", new WinningStrategy(314));
-        Player player2 = new Player("손흥민", new WinningStrategy(15));
+        Player player1 = new Player("최승훈", new ProbStrategy(314));   // 하드 코드 되있음
+        Player player2 = new Player("손흥민", new WinningStrategy(15)); // 하드 코드 되있음
 
         // 게임 10번 시키기
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 1000; i++) {
             Hand h1 = player1.nextHand();
             Hand h2 = player2.nextHand();
 
