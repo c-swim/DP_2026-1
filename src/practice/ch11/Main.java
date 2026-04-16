@@ -1,4 +1,4 @@
-package ch11.Sample;
+package practice.ch11;
 
 public class Main {
     public static void main(String[] args) {
@@ -7,12 +7,9 @@ public class Main {
         Directory bindir = new Directory("bin");
         Directory tmpdir = new Directory("tmp");
         Directory usrdir = new Directory("usr");
-        Directory csh = new Directory("csh");
         rootdir.add(bindir);
         rootdir.add(tmpdir);
         rootdir.add(usrdir);
-        rootdir.add(csh);
-        
         bindir.add(new File("vi", 10000));
         bindir.add(new File("latex", 20000));
         rootdir.printList();
