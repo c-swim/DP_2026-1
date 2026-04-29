@@ -28,14 +28,15 @@ public class Directory extends Entry {
     @Override
     protected void printList(String prefix) {
         System.out.println(prefix + "/" + this);
-        for (Entry entry: directory) {
-            entry.printList(prefix + "/" + name);
+        for (Entry entry: directory) { 
+            entry.printList(prefix + "/" + name); // 이전 경로 + 자기 이름을 붙임
         }
     }
 
+    // 디렉터리 엔트리를 디렉터리에 추가한다
     public Entry add(Entry entry) {
-        directory.add(entry);
-        entry.setParent(this);
+        directory.add(entry);   // 디렉터리에 엔트리를 추가
+        entry.setParent(this);  // 현재 디렉토리를 인자로 들어온 자식의 부모로 설정
         return this;
     }
 }
