@@ -1,4 +1,4 @@
-src/ch10/Sample/Hand.java src/ch10/Sample/Main.java src/ch10/Sample/Player.java src/ch10/Sample/ProbStrategy.java src/ch10/Sample/Strategy.java src/ch10/Sample/WinningStrategy.javapackage ch10.Sample;
+package hw.ch10;
 
 public enum Hand {
     // 가위 바위 보를 나타내는 세 개의 enum 상수
