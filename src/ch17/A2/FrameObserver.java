@@ -13,6 +13,7 @@ import java.awt.event.ActionListener;
 public class FrameObserver extends Frame implements Observer, ActionListener {
     // GraphText는 통지된 수를 텍스트 필드로 표시하는 static 클래스 
     static class GraphText extends TextField implements Observer {
+        // number:***
         public GraphText(int columns) {
             super(columns);
         }
@@ -35,14 +36,17 @@ public class FrameObserver extends Frame implements Observer, ActionListener {
         @Override
         public void update(NumberGenerator generator) {
             number = generator.getNumber();
-            repaint();
+            repaint();  // 전부 clear + paint() 메소드가 호출됨
         }
 
-        public void paint(Graphics g) {
+        public void paint(Graphics g) { // 캔버스에 그림을 그림
             int width = getWidth();
             int height = getHeight();
+
+            // white circle
             g.setColor(Color.white);
             g.fillArc(0, 0, width, height, 0, 360);
+            // red 원호
             g.setColor(Color.red);
             g.fillArc(0, 0, width, height, 90, - number * 360 / 50);
         }

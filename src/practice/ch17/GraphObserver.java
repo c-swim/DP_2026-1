@@ -1,5 +1,3 @@
-package ch17.A2;
-
 public class GraphObserver implements Observer {
     @Override
     public void update(NumberGenerator generator) {
@@ -10,7 +8,7 @@ public class GraphObserver implements Observer {
         }
         System.out.println("");
         try {
-            Thread.sleep(1000);
+            Thread.sleep(100);
         } catch (InterruptedException e) {
         }
     }
