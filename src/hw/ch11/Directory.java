@@ -39,4 +39,21 @@ public class Directory extends Entry {
         entry.setParent(this);  // 현재 디렉토리를 인자로 들어온 자식의 부모로 설정
         return this;
     }
+
+    @Override
+    public List<Entry> search(String keyword) {
+        List<Entry> result = new ArrayList<>();
+        
+        // 자신의 이름이 키워드를 포함하는지 검사
+        if (getName().contains(keyword)) {
+            result.add(this);
+        }
+        
+        // 모든 자식의 search() 결과를 병합
+        for (Entry entry : directory) {
+            result.addAll(entry.search(keyword)); 
+        }
+        
+        return result;
+    }
 }
