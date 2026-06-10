@@ -1,4 +1,4 @@
-package hw.ch22.drawer;
+package hw.ch22;
 
 import hw.ch22.command.*;
 import hw.ch22.drawer.*;
@@ -12,10 +12,18 @@ public class Main extends JFrame implements MouseMotionListener, WindowListener 
     private MacroCommand history = new MacroCommand();
     // 그리는 영역 
     private DrawCanvas canvas = new DrawCanvas(400, 400, history);
-    // 삭제 버튼
+    // 삭제 버튼 
     private JButton clearButton  = new JButton("clear");
-    // 실행 취소 버튼(undo)
+    // 빨간 버튼 
+    private JButton redButton  = new JButton("red");
+    // 초록 버튼
+    private JButton greenButton  = new JButton("green");
+    // 파란 버튼
+    private JButton blueButton  = new JButton("blue");
+    //undo 버튼
     private JButton undoButton  = new JButton("undo");
+    //redo 버튼
+    private JButton redoButton  = new JButton("redo");
 
     // 생성자 
     public Main(String title) {
@@ -25,16 +33,44 @@ public class Main extends JFrame implements MouseMotionListener, WindowListener 
         canvas.addMouseMotionListener(this);
         clearButton.addActionListener(e -> {
             history.clear();
+            canvas.init();
             canvas.repaint();
         });
+        redButton.addActionListener(e -> {
+            Command cmd = new ColorCommand(canvas, Color.red);
+            history.append(cmd);
+            cmd.execute();
+        });
+        greenButton.addActionListener(e -> {
+            Command cmd = new ColorCommand(canvas, Color.green);
+            history.append(cmd);
+            cmd.execute();
+        });
+        blueButton.addActionListener(e -> {
+            Command cmd = new ColorCommand(canvas, Color.blue);
+            history.append(cmd);
+            cmd.execute();
+        });
+        //undo 리스너
         undoButton.addActionListener(e -> {
             history.undo();
+            canvas.repaint();
+        });
+        //redo 리스너
+        redoButton.addActionListener(e -> {
+            history.redo();
             canvas.repaint();
         });
 
         Box buttonBox = new Box(BoxLayout.X_AXIS);
         buttonBox.add(clearButton);
+        buttonBox.add(redButton);
+        buttonBox.add(greenButton);
+        buttonBox.add(blueButton);
+        //undo, redo 버튼 추가
         buttonBox.add(undoButton);
+        buttonBox.add(redoButton);
+        
         Box mainBox = new Box(BoxLayout.Y_AXIS);
         mainBox.add(buttonBox);
         mainBox.add(canvas);
@@ -44,10 +80,9 @@ public class Main extends JFrame implements MouseMotionListener, WindowListener 
         setVisible(true);
     }
 
-    // MouseMotionListener용 
+    // MouseMotionListener용
     @Override
-    public void mouseMoved(MouseEvent e) {
-    }
+    public void mouseMoved(MouseEvent e) {}
 
     @Override
     public void mouseDragged(MouseEvent e) {
@@ -71,5 +106,6 @@ public class Main extends JFrame implements MouseMotionListener, WindowListener 
 
     public static void main(String[] args) {
         new Main("Command Pattern Sample");
+        System.out.println("\n20240877 최영진\n");
     }
 }
